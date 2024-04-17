@@ -1,0 +1,2 @@
+# Restaurant-Data-Display-Application
+ The Restaurant Data Display Application is a Python-based tool designed to fetch and display restaurant information based on postcodes. It aims to provide a straightforward way for users to access specific details about restaurants, such as names, cuisines, ratings, and addresses, from a public API. This project is ideal for users interested in exploring dining options in different UK regions and serves as a practical example of API integration and data processing using Python.
