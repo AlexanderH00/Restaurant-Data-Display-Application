@@ -17,9 +17,10 @@
   - pip install requests
 # How to Run
 - Navigate to the Project Directory:
-  cd restaurant-data-display
+  - cd restaurant-data-display
 - Run the Application:
-  python fetch_data.py
+  - python fetch_data.py
+
 Follow the prompts to enter a UK postcode when requested by the application.
 # Data Source
 The application utilizes the Just Eat public API to fetch restaurant data. This API provides a wide range of data about restaurants, including but not limited to, names, addresses, cuisines, and ratings. The API is accessed via endpoints that require a postcode to return relevant restaurant information for that area.
