@@ -10,11 +10,11 @@
  - Requests: Used for performing HTTP requests to the API.
  - JSON: For parsing and handling data returned from the API.
  # Installation
- - Clone the Repository: 
+- Clone the Repository:
   - git clone https://github.com/AlexanderH00/restaurant-data-display.git
   - cd restaurant-data-display
- - Install Dependencies:
-  pip install requests
+- Install Dependencies:
+  - pip install requests
 # How to Run
 - Navigate to the Project Directory:
   cd restaurant-data-display
