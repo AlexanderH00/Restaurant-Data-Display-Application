@@ -5,12 +5,23 @@ body {
     padding: 0;
 }
 
-h1 {
-    background-color: #007BFF;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+header {
+    background-color: white;
+    color: #f67f00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; /* Adjust padding as needed */
     margin: 0;
+}
+
+h1 {
+    margin: 0;
+    text-align: left;
+}
+
+#headerLogo {
+    height: 50px; /* Adjust the size as needed */
 }
 
 form {
@@ -29,9 +40,15 @@ input[type="text"] {
     border-radius: 4px;
 }
 
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
 button {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #ea6600;
     color: white;
     border: none;
     border-radius: 4px;
@@ -39,7 +56,8 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #f67f00;
+    /* Adjust hover color as preferred */
 }
 
 ul {
@@ -51,10 +69,17 @@ li {
     background: white;
     padding: 10px;
     margin: 8px 0;
-    border-left: 5px solid #007BFF;
+    border-left: 5px solid #f67f00;
 }
 
 .error {
     color: red;
     text-align: center;
+}
+
+/* Additional style for select element to match other inputs */
+#ratingSelect {
+    width: calc(25% - 10px); /* Adjust width as needed */
+    margin-right: 5px;
+    display: inline-block;
 }

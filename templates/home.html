@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Restaurant Finder</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Restaurant Finder</h1>
+    <header>
+        <h1>Restaurant Finder</h1>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Lieferando Logo" id="headerLogo">
+    </header>
     <form action="/" method="post" id="searchForm">
         <input type="text" name="postcode" id="postcodeInput" placeholder="Enter postcode" required>
-        <!-- Add a dropdown for selecting minimum rating -->
         <select name="min_rating" id="ratingSelect">
             <option value="0" selected>Any Rating</option>
             <option value="1">1 Star</option>
@@ -21,7 +24,6 @@
         <button type="submit">Search</button>
     </form>
     
-
     <div id="results">
         {% if restaurants %}
             <h2>Restaurants in {{ postcode }}:</h2>
