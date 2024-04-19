@@ -27,5 +27,3 @@ The application utilizes the Just Eat public API to fetch restaurant data. This 
 # Additional Notes for README
 - Assumptions: Document any assumptions you've made during the development. For example, assuming the API always returns data in a specific format.
 - Possible Improvements: Discuss potential enhancements like adding more robust error handling, supporting more detailed queries, or creating a graphical user interface.
-- Contributing: Encourage others to contribute by providing guidelines on how they can contribute to the project, who they should contact, and any required steps such as coding standards or pull request processes.
-This README layout offers a clear and detailed guide to help you understand and effectively operate the application. It also lays a solid foundation for future development and collaboration.
