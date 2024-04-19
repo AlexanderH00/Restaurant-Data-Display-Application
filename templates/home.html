@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Restaurant Finder</h1>
+    <form action="/" method="post" id="searchForm">
+        <input type="text" name="postcode" id="postcodeInput" placeholder="Enter postcode" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="results">
+        {% if restaurants %}
+            <h2>Restaurants in {{ postcode }}:</h2>
+            <ul>
+            {% for restaurant in restaurants %}
+                <li><strong>{{ restaurant['Name'] }}</strong> - {{ restaurant['Cuisines'] }} - Rating: {{ restaurant['Rating'] }} - Address: {{ restaurant['Address'] }}</li>
+            {% endfor %}
+            </ul>
+        {% elif error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById('searchForm').onsubmit = function(event) {
+            var input = document.getElementById('postcodeInput').value;
+            if (!input) {
+                event.preventDefault();  // Stop form submission
+                alert('Please enter a postcode.');
+            }
+        };
+
+        // Optionally clear the search field after submission
+        document.getElementById('searchForm').addEventListener('submit', function() {
+            document.getElementById('postcodeInput').value = ''; // Clear input after search
+        });
+
+        // Hide results if there are no restaurants
+        window.onload = function() {
+            var results = document.getElementById('results');
+            if (!results.innerText.trim()) {
+                results.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>

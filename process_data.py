@@ -1,7 +1,6 @@
 # process_data.py
 
-def extract_required_data(data):
-    # Assuming 'data' contains a key 'restaurants' directly with a list of restaurant data
+def extract_required_data(data, min_rating=5):
     restaurants = data.get('restaurants', [])
     filtered_restaurants = []
 
@@ -9,25 +8,41 @@ def extract_required_data(data):
         print("No restaurant data available")
         return []
 
-    for restaurant in restaurants[:10]:  # Limit to the first 10 restaurants
-        # Constructing address from multiple fields if needed
+    # Filtering and sorting
+    high_rated_restaurants = [
+        restaurant for restaurant in restaurants
+        if restaurant.get('rating', {}).get('starRating', 0) >= min_rating
+    ]
+    
+    # Sort by rating in descending order
+    sorted_restaurants = sorted(
+        high_rated_restaurants, 
+        key=lambda x: x['rating']['starRating'], reverse=True
+    )
+    
+    for restaurant in restaurants[:10]:  # Process only the first 10 restaurants
+        # Safely extracting address parts with fallbacks for missing data
         address_parts = [
-            restaurant['address']['firstLine'],
-            restaurant['address']['city'],
-            restaurant['address']['postalCode']
+            restaurant.get('address', {}).get('firstLine', 'Address not available'),
+            restaurant.get('address', {}).get('city', ''),
+            restaurant.get('address', {}).get('postalCode', '')
         ]
         address = ', '.join(filter(None, address_parts))  # Join non-empty parts only
 
+        # Extracting cuisines safely, handling cases where 'cuisines' might be missing or empty
+        cuisines_list = restaurant.get('cuisines', [])
+        cuisines = ', '.join(cuisine['name'] for cuisine in cuisines_list if 'name' in cuisine) if cuisines_list else 'Cuisine details not available'
+
+        # Extracting name and rating with defaults
+        name = restaurant.get('name', 'Name not available')
+        rating = restaurant.get('rating', {}).get('starRating', 'Rating not available')
+
         restaurant_info = {
-            'Name': restaurant.get('name', 'N/A'),
-            'Cuisines': ', '.join(cuisine['name'] for cuisine in restaurant.get('cuisines', []) if 'name' in cuisine),
-            'Rating': restaurant.get('rating', {}).get('starRating', 'No rating'),
+            'Name': name,
+            'Cuisines': cuisines,
+            'Rating': rating,
             'Address': address
         }
         filtered_restaurants.append(restaurant_info)
 
     return filtered_restaurants
-
-
-
-
