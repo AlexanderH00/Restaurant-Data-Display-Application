@@ -34,7 +34,7 @@ def fetch_restaurant_data(postcode):
         # Log the entire JSON response to console for debugging
         print("Data retrieved successfully!")
         print("Raw API response data:")
-        print(data)  # This will print the whole JSON response to the console
+        #print(data)  # This will print the whole JSON response to the console
 
         return data
 

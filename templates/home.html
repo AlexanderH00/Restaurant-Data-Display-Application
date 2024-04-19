@@ -9,8 +9,18 @@
     <h1>Restaurant Finder</h1>
     <form action="/" method="post" id="searchForm">
         <input type="text" name="postcode" id="postcodeInput" placeholder="Enter postcode" required>
+        <!-- Add a dropdown for selecting minimum rating -->
+        <select name="min_rating" id="ratingSelect">
+            <option value="0" selected>Any Rating</option>
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+        </select>        
         <button type="submit">Search</button>
     </form>
+    
 
     <div id="results">
         {% if restaurants %}
@@ -24,28 +34,5 @@
             <p class="error">{{ error }}</p>
         {% endif %}
     </div>
-
-    <script>
-        document.getElementById('searchForm').onsubmit = function(event) {
-            var input = document.getElementById('postcodeInput').value;
-            if (!input) {
-                event.preventDefault();  // Stop form submission
-                alert('Please enter a postcode.');
-            }
-        };
-
-        // Optionally clear the search field after submission
-        document.getElementById('searchForm').addEventListener('submit', function() {
-            document.getElementById('postcodeInput').value = ''; // Clear input after search
-        });
-
-        // Hide results if there are no restaurants
-        window.onload = function() {
-            var results = document.getElementById('results');
-            if (!results.innerText.trim()) {
-                results.style.display = 'none';
-            }
-        };
-    </script>
 </body>
 </html>
