@@ -5,11 +5,26 @@
     <title>Restaurant Finder</title>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        // Function to create a map iframe and toggle the dropdown
+        function toggleMap(address, elementId) {
+            var encodedAddress = encodeURIComponent(address);
+            var iframe = document.getElementById(elementId);
+            if (!iframe) {
+                iframe = document.createElement('iframe');
+                iframe.id = elementId;
+                iframe.src = `https://www.google.com/maps?q=${encodedAddress}&output=embed`;
+                document.getElementById(elementId + '-container').appendChild(iframe);
+            }
+            var container = document.getElementById(elementId + '-container');
+            container.style.display = container.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>Restaurant Finder</h1>
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Lieferando Logo" id="headerLogo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Restaurant Finder Logo" id="headerLogo">
     </header>
     <form action="/" method="post" id="searchForm">
         <input type="text" name="postcode" id="postcodeInput" placeholder="Enter postcode" required>
@@ -29,7 +44,13 @@
             <h2>Restaurants in {{ postcode }}:</h2>
             <ul>
             {% for restaurant in restaurants %}
-                <li><strong>{{ restaurant['Name'] }}</strong> - {{ restaurant['Cuisines'] }} - Rating: {{ restaurant['Rating'] }} - Address: {{ restaurant['Address'] }}</li>
+                <li>
+                    <strong>{{ restaurant['Name'] }}</strong> - {{ restaurant['Cuisines'] }} - Rating: {{ restaurant['Rating'] }}
+                    <div class="map-dropdown" onclick="toggleMap('{{ restaurant['Address'] }}', 'map{{ loop.index }}')">
+                        Address: {{ restaurant['Address'] }}
+                    </div>
+                    <div id="map{{ loop.index }}-container" class="map-container"></div>
+                </li>
             {% endfor %}
             </ul>
         {% elif error %}
