@@ -1,3 +1,4 @@
+/* Existing styles for body, headers, forms, and other elements */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -82,4 +83,27 @@ li {
     width: calc(25% - 10px); /* Adjust width as needed */
     margin-right: 5px;
     display: inline-block;
+}
+
+/* Styles for dropdown map */
+.map-container {
+    display: none; /* Start with the map container hidden */
+    position: relative; /* Position relative to the dropdown button */
+    width: 100%; /* Full width of the container */
+}
+
+.map-dropdown {
+    cursor: pointer;
+    color: #ea6600;
+    margin-top: 10px;
+}
+
+.map-container iframe {
+    display: block; /* Show the iframe when it's loaded */
+    width: 100%; /* Full width */
+    height: 300px; /* Set a fixed height */
+    border: none; /* Remove border */
+    position: absolute; /* Position absolutely inside the relative container */
+    top: 100%; /* Position below the dropdown button */
+    left: 0;
 }
