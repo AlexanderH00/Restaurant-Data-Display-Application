@@ -2,13 +2,13 @@
  The Restaurant Data Display Application is a web-based solution designed to help users find restaurants based on their postcode and desired rating. This application queries an external API to retrieve restaurant data for a specific location and filters these results according to user preferences. The front-end provides a user-friendly interface where users can input a postcode, select a minimum rating, and view a list of restaurants that meet their criteria, complete with ratings, cuisines offered, and interactive maps.
 # Restaurant Finder Web Interface
 ## Empty State
-(![Screenshot 2024-04-21 220856](https://github.com/AlexanderH00/Restaurant-Data-Display-Application/assets/149702761/3b8c506e-7ea6-4670-88aa-5d709e8d8c94))
+![Screenshot 2024-04-21 220856](https://github.com/AlexanderH00/Restaurant-Data-Display-Application/assets/149702761/3b8c506e-7ea6-4670-88aa-5d709e8d8c94)
 This is the default state of the application when no search has been conducted.
 ## Search Results
-(![Screenshot 2024-04-21 221335](https://github.com/AlexanderH00/Restaurant-Data-Display-Application/assets/149702761/2dfbfe2a-abca-4a04-b9e8-b4613c239ca8))
+![Screenshot 2024-04-21 221335](https://github.com/AlexanderH00/Restaurant-Data-Display-Application/assets/149702761/2dfbfe2a-abca-4a04-b9e8-b4613c239ca8)
 Search results are displayed both in a list and on the map, providing useful information such as the restaurant name, cuisine, rating, and address.
 ## Main Interface with Map
-(![Screenshot 2024-04-21 220418](https://github.com/AlexanderH00/Restaurant-Data-Display-Application/assets/149702761/daf9283c-9e3b-4d8b-a653-497146b11eaf))
+![Screenshot 2024-04-21 220418](https://github.com/AlexanderH00/Restaurant-Data-Display-Application/assets/149702761/daf9283c-9e3b-4d8b-a653-497146b11eaf)
 The main interface includes a search bar and a dynamically generated map showing restaurant locations.
 # Features
  - Postcode Search: Users can enter a postcode to identify restaurants located within a specific geographic area. This feature simplifies the search process by localizing results.
