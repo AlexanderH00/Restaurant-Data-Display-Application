@@ -32,10 +32,10 @@ Once the server starts, access the application through your web browser at http:
 The restaurant data is sourced from the Just Eat API, which provides comprehensive information about restaurants in the UK, searchable by postcode.
 # Additional Notes for README
 - Assumptions:
- - The Just Eat API endpoint is currently functional and accessible without API keys for development purposes.
- - Restaurants in the API response are assumed to have ratings, address information, and at least one cuisine listed.
+  - The Just Eat API endpoint is currently functional and accessible without API keys for development purposes.
+  - Restaurants in the API response are assumed to have ratings, address information, and at least one cuisine listed.
 - Possible Improvements:
- - Caching: Implement caching to reduce API calls for the same postcode and rating searches, enhancing performance and user experience.
- - User Authentication: Add user accounts for personalized experiences such as saving favorite restaurants or previous searches.
- - Advanced Filters: Include filters for price, distance, or specific cuisines to refine search results further.
- - Feedback System: Incorporate a user feedback system to rate the usability of the application and gather user-generated restaurant reviews.
+  - Caching: Implement caching to reduce API calls for the same postcode and rating searches, enhancing performance and user experience.
+  - User Authentication: Add user accounts for personalized experiences such as saving favorite restaurants or previous searches.
+  - Advanced Filters: Include filters for price, distance, or specific cuisines to refine search results further.
+  - Feedback System: Incorporate a user feedback system to rate the usability of the application and gather user-generated restaurant reviews.
