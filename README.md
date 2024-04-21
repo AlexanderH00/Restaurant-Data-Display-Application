@@ -1,29 +1,41 @@
 # Restaurant-Data-Display-Application
- The Restaurant Data Display Application is a Python-based tool that fetches and displays restaurant information based on postcodes. It aims to provide a straightforward way for users to access specific restaurant details, such as names, cuisines, ratings, and addresses, from a public API. This project is ideal for users interested in exploring dining options in different UK regions and serves as a practical example of API integration and data processing using Python.
+ The Restaurant Data Display Application is a web-based solution designed to help users find restaurants based on their postcode and desired rating. This application queries an external API to retrieve restaurant data for a specific location and filters these results according to user preferences. The front-end provides a user-friendly interface where users can input a postcode, select a minimum rating, and view a list of restaurants that meet their criteria, complete with ratings, cuisines offered, and interactive maps.
 # Features
- - Data Fetching: Retrieves restaurant data dynamically based on the input postcode.
- - Data Filtering: Extracts and displays only relevant data from the API, focusing on the restaurant's name, cuisine types, ratings, and address.
- - Limited Data Display: Limits the output to the first 10 restaurants to ensure clarity and ease of use.
- - Error Handling: Implements basic error handling for API connectivity issues and data processing errors.
+ - Postcode Search: Users can enter a postcode to identify restaurants located within a specific geographic area. This feature simplifies the search process by localizing results.
+ - Rating Filter: Users have the option to filter restaurant listings based on minimum star ratings, ranging from 1 to 5 stars. This feature helps users find higher-quality dining options according to their preferences.
+ - Interactive Maps: Each restaurant listing is equipped with an interactive map that displays the restaurant's location. Users can toggle the visibility of the map by clicking on the address, making it easier to visualize the restaurant's location.
+ - Responsive Design: The application is designed to be functional and accessible across a variety of devices and screen sizes, ensuring a consistent user experience whether on a desktop, tablet, or mobile device.
+ - Data Fetching: The application dynamically retrieves restaurant data based on the user-provided postcode, ensuring that the results are relevant to the specified area.
+ - Data Filtering: This process only extracts relevant data from the API's response. The application focuses on displaying the restaurant's name, types of cuisines offered, ratings, and address, which are pertinent details for users making dining decisions.
+ - Limited Data Display: To maintain clarity and prevent information overload, the application limits the display to the first 10 restaurants that meet the search criteria. This approach enhances the usability of the application by simplifying the user interface.
+ - Error Handling: The application includes basic error handling mechanisms to address issues such as API connectivity problems and data processing errors. This ensures that the application remains robust and user-friendly, even when external dependencies encounter issues.
+   Collectively, these features are designed to create an intuitive, efficient, and effective platform for users to search for and assess dining options based on specific criteria.
  # Technologies Used
- - Python: The entire application is written in Python, taking advantage of its powerful libraries.
- - Requests: Used for performing HTTP requests to the API.
- - JSON: For parsing and handling data returned from the API.
+ - Python: Main programming language used for backend development.
+ - Flask: Lightweight WSGI web application framework used to handle requests and serve the HTML content.
+ - HTML/CSS: Used for structuring and styling the web interface.
+ - JavaScript: Enhances interactivity on the client side, particularly for map integration.
+ - Requests Library: Enables HTTP requests to external APIs in Python.
+ - JSON: For parsing and handling data returned from the Just Eat API, crucial for data exchange between the application and external services.
+ - Just Eat API: External API used for fetching restaurant data.
  # Installation
 - Clone the Repository:
   - git clone https://github.com/AlexanderH00/restaurant-data-display.git
-  - cd restaurant-data-display
+  - cd restaurant-data-display-application
 - Install Dependencies:
-  - pip install requests
+  - pip install flask requests
 # How to Run
-- Navigate to the Project Directory:
-  - cd restaurant-data-display
-- Run the Application:
-  - python fetch_data.py
-
-Follow the prompts to enter a UK postcode when requested by the application.
+To start the application, run the following command in the terminal:
+- python app.py
+Once the server starts, access the application through your web browser at http://localhost:5000/.
 # Data Source
-The application utilizes the Just Eat public API to fetch restaurant data. This API provides a wide range of data about restaurants, including but not limited to, names, addresses, cuisines, and ratings. The API is accessed via endpoints that require a postcode to return relevant restaurant information for that area.
+The restaurant data is sourced from the Just Eat API, which provides comprehensive information about restaurants in the UK, searchable by postcode.
 # Additional Notes for README
-- Assumptions: Document any assumptions you've made during the development. For example, assuming the API always returns data in a specific format.
-- Possible Improvements: Discuss potential enhancements like adding more robust error handling, supporting more detailed queries, or creating a graphical user interface.
+- Assumptions:
+ - The Just Eat API endpoint is currently functional and accessible without API keys for development purposes.
+ - Restaurants in the API response are assumed to have ratings, address information, and at least one cuisine listed.
+- Possible Improvements:
+ - Caching: Implement caching to reduce API calls for the same postcode and rating searches, enhancing performance and user experience.
+ - User Authentication: Add user accounts for personalized experiences such as saving favorite restaurants or previous searches.
+ - Advanced Filters: Include filters for price, distance, or specific cuisines to refine search results further.
+ - Feedback System: Incorporate a user feedback system to rate the usability of the application and gather user-generated restaurant reviews.
